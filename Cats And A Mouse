@@ -1,0 +1,41 @@
+
+import java.util.Scanner;
+
+public class Solution {
+public static void main(String[] args){
+    Scanner sc = new Scanner(System.in);
+    int a = sc.nextInt();
+    
+    while(a-->0){
+
+    int  x= sc.nextInt();
+    int y= sc.nextInt();
+    int z= sc.nextInt();
+    
+    int p=(x-z);
+    int q=(y-z);
+    if(p<0){
+        p=-p;
+    }
+    if(q<0){
+        q=-q;
+    }
+  if(p>q){
+    System.out.println(
+        "Cat B");
+  }
+ else if (p < q) {
+                System.out.println("Cat A");
+            }
+        
+        if(p==q){
+            System.out.println("Mouse C");
+        }
+    }
+    
+ 
+    
+    
+}
+    
+}
