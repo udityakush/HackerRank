@@ -1,0 +1,49 @@
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+import java.util.Scanner;
+
+
+public class Solution {
+    public static void main(String[] args) throws IOException {
+        Scanner sc = new Scanner (System.in);
+    int  s= sc.nextInt();
+    int t = sc.nextInt();
+    int a = sc.nextInt();
+    int b = sc.nextInt();
+    int m = sc.nextInt();
+    int n = sc.nextInt();
+    int apples[]=new int[m];
+    int oranges[]=new int[n];
+    int countapple=0;
+    int countorange=0;
+    
+    for(int i=0;i<apples.length;i++){
+        apples[i]=sc.nextInt();
+    }
+    for(int i=0;i<oranges.length;i++){
+        oranges[i]=sc.nextInt();
+    }
+    
+    for(int i =0;i<apples.length;i++){
+        int x=apples[i]+a;
+        if(s<=x && x<=t){
+            countapple++;
+        }
+           }
+            for(int i =0;i<oranges.length;i++){
+        int x=oranges[i]+b;
+        if(s<=x && x<=t){
+            countorange++;
+        }
+    
+    }
+    System.out.println(countapple);
+    System.out.println(countorange);
+}
+}
+
