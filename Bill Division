@@ -1,0 +1,38 @@
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+import java.util.Scanner;
+
+public class Solution {
+    public static void main(String[] args) throws IOException {
+        Scanner Sc = new Scanner(System.in);
+        
+      int n = Sc.nextInt();
+       int k = Sc.nextInt();
+       int bill[]=new int[n];      
+       for(int i =0;i<bill.length;i++){
+        bill[i]=Sc.nextInt();
+       }
+       
+       int b= Sc.nextInt();
+       int totalbill=0;
+       for(int i =0;i<bill.length;i++){
+        totalbill+=bill[i];
+       }
+       int anna =(totalbill-bill[k])/2;
+      if(anna==b){
+        System.out.println("Bon Appetit")  ;
+      }
+      else{
+        System.out.println(b-anna);
+      }
+       }
+  
+    }
+    
+
+
