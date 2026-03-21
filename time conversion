@@ -1,0 +1,42 @@
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+public class Solution {
+    public static void main(String[] args) throws IOException {
+      Scanner sc= new Scanner(System.in);
+      String s = sc.nextLine();
+    
+    String AM= "AM";
+    String PM= "PM";
+    String z="12";
+    String a= s.substring(8,10);
+    String x= s.substring(0,2);   
+
+    if( a.equals(AM) && !x.equals(z)){
+        s=s.substring(0,8);
+        System.out.println(s);
+    }
+    if(a.equals(AM)&& x.equals(z)){
+        String k= s.substring(2,8);
+        System.out.println("00"+ k);
+    }
+    
+    if(a.equals(PM)&& !x.equals(z)){
+        String b = s.substring(0,2);
+        int num = Integer.parseInt(b);
+        int num2= num+12;
+        String c= s.substring(2,8);  
+        System.out.println(num2 + c);
+    }
+    if(a.equals(PM) && x.equals(z)){
+        String l= s.substring(0,8);
+        System.out.println(l);
+    }
+      
+      }
+}
