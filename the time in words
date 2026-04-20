@@ -1,0 +1,74 @@
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+import java.util.Scanner;
+ 
+public class Solution {
+    public static void main(String[] args) throws IOException {
+    Scanner sc= new Scanner (System.in);
+    int  h = sc.nextInt();
+    int m = sc.nextInt();
+String minuteinword="";
+String after30min="";
+    
+    String[] words = {"", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", 
+                      "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"};
+    String[] tens = {"", "", "twenty", "thirty", "forty", "fifty", "sixty"};
+    
+    if(m<20){
+        minuteinword=words[m];
+    }
+     else if(m<30) {
+        minuteinword=tens[m/10]+" "+ words[m%10];
+     }
+    if(m>30){
+     int n = 60-m;
+     if(n<20){
+        after30min=words[n];
+     }
+     else{
+        after30min=tens[n/10]+" "+ words[n%10];
+        
+     }
+    }
+    
+    if(m==00){
+        System.out.println(words[h]+ " o' clock");
+    }
+   
+
+     if (m==15){
+        System.out.println("quarter past "+ words[h]);
+    }
+     else if(m>=1 && m<=30 && m!=15&& m!=30 && m!=1){
+        System.out.println(minuteinword + " minutes past "+words[h]);
+        
+     }
+     if(m==1){
+            System.out.println(minuteinword + " minute past "+words[h]);
+     }
+     if  (m==45){
+        int z=h+1;
+        if(z>12){
+            z=1;
+            System.out.println("quarter to "+ words[z]);
+        }
+        else{
+            System.out.println("quarter to "+words[h+1]);
+        }
+    }
+    else if(m>30 && m!=45){
+        System.out.println(after30min+" minutes to "+words[h+1]);
+    }
+    if(m==30){
+        System.out.println("half past "+words[h]);
+    }
+     
+
+  
+    }
+}
